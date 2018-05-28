@@ -1,0 +1,13 @@
+/opt/pccts/bin/antlr example0.g
+/opt/pccts/bin/dlg .dlg scan.c
+gcc -o example0 example0.c scan.c err.c -I/home/soft/PCCTS_v1.33/include/
+
+
+/opt/pccts/bin/antlr -gt example1.g
+/opt/pccts/bin/dlg -ci parser.dlg scan.c
+g++ -o example1 example1.c scan.c err.c -I/home/soft/PCCTS_v1.33/include/ -Wno-write-strings
+
+
+antlr -gt example1.g
+dlg -ci parser.dlg scan.c
+g++ -o example1 example1.c scan.c err.c -I/usr/include/pccts -Wno-write-strings
